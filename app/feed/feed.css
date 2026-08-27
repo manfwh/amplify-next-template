@@ -1,0 +1,142 @@
+.feed {
+  width: min(720px, calc(100% - 2rem));
+  margin: 1.5rem auto 3rem;
+  color: #1a1230;
+}
+
+.feed h1,
+.feed h2 {
+  margin: 0 0 0.35rem;
+}
+
+.feed-lead {
+  margin: 0 0 1.25rem;
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+.feed-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(26, 18, 48, 0.12);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.feed-card a {
+  color: inherit;
+  font-weight: 700;
+}
+
+.feed-card p,
+.feed-muted {
+  margin: 0.35rem 0 0;
+  opacity: 0.75;
+  font-size: 0.92rem;
+}
+
+.feed-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.feed-form input,
+.feed-form textarea {
+  font: inherit;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(26, 18, 48, 0.2);
+  background: white;
+}
+
+.feed-form textarea {
+  min-height: 4.5rem;
+  resize: vertical;
+}
+
+.feed-form button,
+.feed-actions button {
+  align-self: flex-start;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.55em 1.1em;
+  font-size: 0.95em;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: white;
+  cursor: pointer;
+}
+
+.feed-form button:disabled,
+.feed-actions button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.feed-empty {
+  opacity: 0.7;
+}
+
+.feed-back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.feed-error {
+  color: #8b1e3f;
+  font-size: 0.9rem;
+}
+
+.feed-skeleton {
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.feed-skeleton-line {
+  height: 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ddd5f3, #f4f0ff, #ddd5f3);
+  background-size: 200% 100%;
+  animation: feed-shimmer 1.2s ease-in-out infinite;
+  margin-bottom: 0.55rem;
+}
+
+.feed-skeleton-line.short {
+  width: 40%;
+}
+
+.feed-skeleton-line.medium {
+  width: 70%;
+}
+
+@keyframes feed-shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+.feed-comments {
+  margin-top: 1.25rem;
+}
+
+.feed-comment {
+  background: rgba(255, 255, 255, 0.78);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.auth-compact {
+  max-width: 420px;
+}

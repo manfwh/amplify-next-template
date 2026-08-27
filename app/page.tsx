@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
 import { Authenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
-import "./../app/app.css";
 
 const client = generateClient<Schema>();
 
@@ -33,7 +33,14 @@ function TodoList({
 
   return (
     <main>
-      <h1>{user?.signInDetails?.loginId}'s todos</h1>
+      <p className="todos-note">
+        The owner Todo list is unchanged.{" "}
+        <Link href="/feed" prefetch={true}>
+          Feed
+        </Link>{" "}
+        is the Next.js 16.3 Instant Navigation + Cache Components demo.
+      </p>
+      <h1>{user?.signInDetails?.loginId}&apos;s todos</h1>
       <button onClick={createTodo}>+ new</button>
       <ul>
         {todos.map((todo) => (
@@ -49,8 +56,10 @@ function TodoList({
 
 export default function App() {
   return (
-    <Authenticator loginMechanisms={["email"]}>
-      {({ signOut, user }) => <TodoList user={user} signOut={signOut} />}
-    </Authenticator>
+    <div className="todos-wrap">
+      <Authenticator loginMechanisms={["email"]}>
+        {({ signOut, user}) => <TodoList user={user} signOut={signOut} />}
+      </Authenticator>
+    </div>
   );
 }
